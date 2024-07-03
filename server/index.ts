@@ -8,8 +8,15 @@ const compression = require('compression');
 
 const app = express();
 const port = 8080;
+const corsOptions = {
+    origin: 'https://hongyi.vercel.app', // Allow only your frontend domain
+    methods: ['GET', 'POST', 'OPTIONS'], // Allow specific methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Preflight OPTIONS request
 
-app.use(cors());
 app.use(compression());
 
 // Have Node serve the files for our built React app
