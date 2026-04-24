@@ -30,6 +30,11 @@ const sources: Resource[] = [
         path: 'models/Decor/baked_decor_modified.jpg',
     },
     {
+        name: 'catModel',
+        type: 'gltfModel',
+        path: 'models/Cat/sherry.glb',
+    },
+    {
         name: 'monitorSmudgeTexture',
         type: 'texture',
         path: 'textures/monitor/layers/compressed/smudges.jpg',
